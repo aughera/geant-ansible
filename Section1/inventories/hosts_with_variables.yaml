@@ -1,0 +1,24 @@
+---
+all:
+  vars:
+    ansible_user: zork
+    ansible_ssh_pass: swordfish
+  hosts:
+    loadbalancer1:
+    veos:
+      vars:
+        ansible_host: localhost
+        ansible_port: 9022
+  children:
+    webservers:
+      vars:
+        ansible_user: nginx_test
+      hosts:
+        web[01:04]_dublin:
+    dbservers:
+      hosts:
+        db[01:02]_dublin:
+    all_servers:
+      children:
+        webservers:
+        dbservers:

@@ -1,0 +1,34 @@
+
+PLAY [Play 1 - Show the software version on an Arista switch] *****************************************************************************************************
+
+TASK [Task 1.1 - Gather version from switches] ********************************************************************************************************************
+fatal: [veos]: UNREACHABLE! => {"changed": false, "msg": "Invalid/incorrect password: ", "unreachable": true}
+
+PLAY RECAP ********************************************************************************************************************************************************
+veos                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+
+dcunningham@hellfire ~/O/G/O/A/e/S/show_version (master) [4]> ansible-playbook -i hosts show_version.yaml
+
+PLAY [Play 1 - Show the software version on an Arista switch] *****************************************************************************************************
+
+TASK [Task 1.1 - Gather version from switches] ********************************************************************************************************************
+changed: [veos]
+
+TASK [Task 1.2 - Print output] ************************************************************************************************************************************
+ok: [veos] => {
+    "showvers.stdout_lines[0]": "Software image version: 4.27.0F"
+}
+
+PLAY [Play 2 - Verify switch software] ****************************************************************************************************************************
+
+TASK [Task 2.1 - Assert we are running the correct EOS version (4.25)] ********************************************************************************************
+fatal: [veos]: FAILED! => {
+    "assertion": "'4.25' in showvers.stdout_lines[0]",
+    "changed": false,
+    "evaluated_to": false,
+    "msg": "Oh noes! Switch not running eOS 4.25!"
+}
+
+PLAY RECAP ********************************************************************************************************************************************************
+veos                       : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+

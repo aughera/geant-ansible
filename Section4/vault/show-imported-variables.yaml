@@ -1,0 +1,20 @@
+---
+- name: Show version
+  hosts: veos
+  gather_facts: "no"
+  connection: network_cli
+  vars:
+    ansible_connection: network_cli
+    ansible_network_os: eos
+
+  tasks:
+    - name: Include plaintext secrets
+      include_vars: secrets_plaintext.yaml
+
+    - name: Show Ansible username
+      debug: var=ansible_user
+
+    - name: Show Ansible password
+      debug: var=ansible_password
+
+

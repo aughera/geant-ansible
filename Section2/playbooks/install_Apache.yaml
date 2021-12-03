@@ -1,0 +1,12 @@
+---
+- name: Install Apache2 on all webservers
+  hosts: webservers
+  sudo: yes					# Must be root
+  tasks:
+    - name: Install Apache
+      apt: pkg=apache2 state=latest	# httpd if using yum
+    - name: Generate config file
+      copy: src=httpd.conf dest=/etc/httpd.conf
+    - name: Restart Apache
+      service:
+          name=httpd state=started

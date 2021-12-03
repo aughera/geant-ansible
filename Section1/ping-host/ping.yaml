@@ -1,0 +1,9 @@
+---
+- name: A play to run the ping module
+  hosts: all
+  tasks:
+  - name: A task to invoke the ping module
+    ping:
+    register: ping_results
+  - name: A task to print the output
+    debug: var=ping_results

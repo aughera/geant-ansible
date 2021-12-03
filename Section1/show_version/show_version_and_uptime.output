@@ -1,0 +1,26 @@
+
+PLAY [Play 1 - Show the software version on an Arista switch] *****************************************************************************************************
+
+TASK [Task 1.1 - Gather version from switches] ********************************************************************************************************************
+changed: [veos]
+
+TASK [Task 1.2 - Print output] ************************************************************************************************************************************
+ok: [veos] => {
+    "showvers": {
+        "changed": true,
+        "failed": false,
+        "rc": 0,
+        "stderr": "Shared connection to localhost closed.\r\n",
+        "stderr_lines": [
+            "Shared connection to localhost closed."
+        ],
+        "stdout": "Software image version: 4.27.0F\r\n",
+        "stdout_lines": [
+            "Software image version: 4.27.0F"
+        ]
+    }
+}
+
+PLAY RECAP ********************************************************************************************************************************************************
+veos                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

@@ -1,0 +1,12 @@
+---
+- name: Play 1 - Show the software version on all devices
+  hosts: all
+  gather_facts: "no"
+  connection: local
+  tasks:
+    - name: Task 1.1 - Gather version from switches
+      raw: 'show version'
+      register: showvers
+
+    - name: Task 1.2 - Print output
+      debug: var=showvers.stdout_lines

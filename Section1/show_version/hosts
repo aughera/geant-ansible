@@ -1,0 +1,9 @@
+[all:vars]
+ansible_connection=ssh
+ansible_user=zork
+
+[veos_hosts]
+veos ansible_host=localhost ansible_port=9022 ansible_ssh_pass=swordfish
+
+[junos_hosts]
+vSRX ansible_host=localhost ansible_port=9023 ansible_ssh_pass=Swordfish123

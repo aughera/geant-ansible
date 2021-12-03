@@ -1,0 +1,26 @@
+---
+- name: Play 1 - Show the software version on an Arista switch
+  hosts: veos
+  gather_facts: "no"
+  connection: local
+  tasks:
+    - name: Task 1.1 - Gather version from switches
+      raw: 'show version | include Software'
+      register: showvers
+
+    - name: Task 1.2 - Print output
+      debug: var=showvers.stdout_lines[0]
+
+- name: Play 2 - Verify switch software
+  hosts: veos
+  vars:
+    eos_version: "4.25"
+  gather_facts: "no"
+  connection: local
+
+  tasks:
+    - name: Task 2.1 - Assert we are running the correct EOS version ({{eos_version}})
+      assert:
+        that:
+          - "'{{eos_version}}' in showvers.stdout_lines[0]"
+        msg: "Oh noes! Switch not running eOS {{eos_version}}!"

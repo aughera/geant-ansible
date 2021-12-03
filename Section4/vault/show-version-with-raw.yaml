@@ -1,0 +1,23 @@
+---
+- name: Show version
+  hosts: veos
+  gather_facts: "no"
+  connection: network_cli
+
+  tasks:
+    - name: Include plaintext secrets
+      include_vars: secrets_plaintext.yaml
+
+        #    - name: Show Ansible username
+        #      debug: var=ansible_user
+        #
+        #    - name: Show Ansible password
+        #      debug: var=ansible_password
+
+    - name: Gather version from switch
+      raw: 'show version | include Software'
+      register: showvers
+
+    - name: Print output
+      debug: var=showvers.stdout_lines[0]
+

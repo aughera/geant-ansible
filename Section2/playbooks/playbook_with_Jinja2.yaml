@@ -1,0 +1,14 @@
+---
+- name: Copy the relevant files to the target
+  vars:
+    source_file:			    foo.conf
+    destination_directory:	/etc/foo
+  tasks:
+    - name: "copy foo.conf to server"
+      copy:
+          src:		{{ source_file }}
+          dest:		{{ destination_directory }}
+          owner:	foo
+          group:	foo
+          mode:	‘0644’
+          backup:	yes

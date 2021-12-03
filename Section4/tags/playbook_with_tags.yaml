@@ -1,0 +1,14 @@
+---
+- name: Play to install service daemons
+  hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Install web servers
+    debug:
+      msg: “Installing web servers”
+    tags: webservers
+
+  - name: Install the db servers   
+    debug:
+      msg: “Installing db servers”
+    tags: dbservers

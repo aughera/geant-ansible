@@ -1,0 +1,2 @@
+# veos ansible_connection=ssh ansible_host=localhost ansible_port=9022 
+veos ansible_connection=ssh ansible_host=localhost ansible_port=9022 ansible_user=zork ansible_ssh_pass=swordfish

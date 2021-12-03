@@ -1,0 +1,10 @@
+################################################################################################
+#
+# Try this on any UNIX host to which you have ssh access.
+#
+# You will need to set several ansible variable to make it work, e.g.
+#
+## vhost ansible_host=localhost ansible_user=zork ansible_ssh_pass=swordfish ansible_port=9023
+#
+################################################################################################
+vhost ansible_host=localhost ansible_user=zork ansible_ssh_pass=swordfish ansible_port=9023

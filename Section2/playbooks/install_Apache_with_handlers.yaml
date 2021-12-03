@@ -1,0 +1,16 @@
+---
+- name: Install mod_rewrite on all webservers
+  hosts: webservers
+  sudo: yes					# Gotta be root
+  tasks:
+    - name: Install Apache
+      apt: pkg=apache2 state=latest
+    - name: enable mod_rewrite
+      apache2_module:
+        name : rewrite
+        state : present
+        notify:
+          - restart apache2
+  handlers:
+    - name: Restart Apache
+      service: name=apache2 state=restarted

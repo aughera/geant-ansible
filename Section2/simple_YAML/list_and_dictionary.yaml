@@ -1,0 +1,11 @@
+---
+devices:
+  - routers
+  - switches
+  - firewalls
+
+vlan:
+  name: DMZ
+  id:   10
+  subnet: 10.1.20.0/24
+  acl: DMZ_from_internet_v4

@@ -1,0 +1,11 @@
+---
+# Oh look, a comment…
+# …spread out over multiple lines
+- name: Set up Apache		# Or nginx, or Mongoose
+  hosts: webservers
+  tasks:
+    - name: install Apache
+    - name: generate Apache config file
+    - name: download Web content to relevant directory
+    - name: restart Apache
+    - name: eat cake

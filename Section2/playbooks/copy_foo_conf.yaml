@@ -1,0 +1,16 @@
+---
+- name: Copy the relevant files to the target
+#  become: true
+  hosts: testhost
+  vars:
+    source_file: foo.conf
+    destination_directory: /tmp/foo.conf
+  tasks:
+    - name: copy foo.conf to server
+      copy:
+        src:  "{{ source_file }}"
+        dest:  "{{ destination_directory }}"
+        backup: yes
+#        owner: scapegoat
+#        group: scapegoat
+#        mode: "0644"

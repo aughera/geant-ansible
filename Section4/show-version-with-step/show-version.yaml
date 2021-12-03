@@ -1,0 +1,13 @@
+---
+- name: Show version
+  hosts: veos
+  gather_facts: "no"
+  connection: network_cli
+
+  tasks:
+    - name: Gather version
+      raw: 'show version | include Software'
+      register: showvers
+
+    - name: Print output
+      debug: var=showvers.stdout_lines[0]

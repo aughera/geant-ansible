@@ -1,0 +1,19 @@
+logging_level: 4
+syslog_level: 4
+log_buffer: 45000
+
+radius_host:
+  - host: 193.1.219.33
+  - host: 193.1.248.38
+
+logging:
+  - host: 193.1.219.117
+  - host: 193.1.219.36
+  - host: 193.1.248.123
+
+dns:
+  - server: 193.1.186.2
+  - server: 193.1.186.3
+
+domain_name: services.hea.net
+

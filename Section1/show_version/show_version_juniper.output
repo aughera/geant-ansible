@@ -1,0 +1,64 @@
+
+PLAY [Play 1 - Show the software version on a vSRX] ***************************************************************************************************************
+
+TASK [Task 1.1 - Gather version from switches] ********************************************************************************************************************
+changed: [vSRX]
+
+TASK [Task 1.2 - Print output] ************************************************************************************************************************************
+ok: [vSRX] => {
+    "showvers.stdout_lines": [
+        "Model: vSRX",
+        "Junos: 21.3R1.9",
+        "JUNOS OS Kernel 64-bit XEN [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS OS libs [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS OS runtime [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS OS time zone information [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS OS libs compat32 [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS OS 32-bit compatibility [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS py extensions [20210915.190147_builder_junos_213_r1]",
+        "JUNOS py base [20210915.190147_builder_junos_213_r1]",
+        "JUNOS OS vmguest [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS OS crypto [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS OS boot-ve files [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS network stack and utilities [20210915.190147_builder_junos_213_r1]",
+        "JUNOS libs [20210915.190147_builder_junos_213_r1]",
+        "JUNOS libs compat32 [20210915.190147_builder_junos_213_r1]",
+        "JUNOS runtime [20210915.190147_builder_junos_213_r1]",
+        "JUNOS na telemetry [21.3R1.9]",
+        "JUNOS Web Management Platform Package [20210915.190147_builder_junos_213_r1]",
+        "JUNOS vsrx modules [20210915.190147_builder_junos_213_r1]",
+        "JUNOS srx libs compat32 [20210915.190147_builder_junos_213_r1]",
+        "JUNOS srx runtime [20210915.190147_builder_junos_213_r1]",
+        "JUNOS srx platform support [20210915.190147_builder_junos_213_r1]",
+        "JUNOS common platform support [20210915.190147_builder_junos_213_r1]",
+        "JUNOS vsrx runtime [20210915.190147_builder_junos_213_r1]",
+        "JUNOS Routing mpls-oam-basic [20210915.190147_builder_junos_213_r1]",
+        "JUNOS Routing lsys [20210915.190147_builder_junos_213_r1]",
+        "JUNOS Routing 32-bit Compatible Version [20210915.190147_builder_junos_213_r1]",
+        "JUNOS Routing aggregated [20210915.190147_builder_junos_213_r1]",
+        "JUNOS probe utility [20210915.190147_builder_junos_213_r1]",
+        "JUNOS pppoe [20210915.190147_builder_junos_213_r1]",
+        "JUNOS Openconfig [21.3R1.9]",
+        "JUNOS mtx network modules [20210915.190147_builder_junos_213_r1]",
+        "JUNOS modules [20210915.190147_builder_junos_213_r1]",
+        "JUNOS srx libs [20210915.190147_builder_junos_213_r1]",
+        "JUNOS hsm [20210915.190147_builder_junos_213_r1]",
+        "JUNOS srx Data Plane Crypto Support [20210915.190147_builder_junos_213_r1]",
+        "JUNOS daemons [20210915.190147_builder_junos_213_r1]",
+        "JUNOS srx daemons [20210915.190147_builder_junos_213_r1]",
+        "JUNOS cloud libs [20210915.190147_builder_junos_213_r1]",
+        "JUNOS cloud init [20210915.190147_builder_junos_213_r1]",
+        "JUNOS SRX TVP AppQos Daemon [20210915.190147_builder_junos_213_r1]",
+        "JUNOS Extension Toolkit [20210915.190147_builder_junos_213_r1]",
+        "JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+20210915.190147_builder_junos_213_r1]",
+        "JUNOS J-Insight [20210915.190147_builder_junos_213_r1]",
+        "JUNOS Online Documentation [20210915.190147_builder_junos_213_r1]",
+        "JUNOS jail runtime [20210828.6e5b1bf_builder_stable_12_213]",
+        "JUNOS FIPS mode utilities [20210915.190147_builder_junos_213_r1]",
+        "JUNOS dsa dsa [21.3R1.9]"
+    ]
+}
+
+PLAY RECAP ********************************************************************************************************************************************************
+vSRX                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

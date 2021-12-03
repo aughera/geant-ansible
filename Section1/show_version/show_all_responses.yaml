@@ -1,0 +1,12 @@
+---
+- name: Play 1 - Show the software version on an Arista switch
+  hosts: veos
+  gather_facts: "no"
+  connection: local
+  tasks:
+    - name: Task 1.1 - Gather version from switches
+      raw: 'show version | include Software'
+      register: showvers
+
+    - name: Task 1.2 - Print output
+      debug: var=showvers

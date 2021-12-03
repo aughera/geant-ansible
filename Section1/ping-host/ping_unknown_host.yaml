@@ -1,0 +1,6 @@
+---
+- name: A play to run the ping module
+  hosts: scapegoat
+  tasks:
+  - name: A task to invoke the ping module
+    ping:

@@ -1,0 +1,14 @@
+$ tree
+.
+├── ansible.cfg
+├── hosts
+└── group_vars
+│    └── all.yaml
+│    └── webservers.yaml
+└── host_vars
+│    └── web1.yaml
+│    └── web2.yaml
+│    └── db1.yaml
+│    └── db2.yaml
+├── setup_apache_playbook.yaml
+└── setup_mysql_playbook.yaml

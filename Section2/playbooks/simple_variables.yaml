@@ -1,0 +1,10 @@
+---
+- name: Set up Apache
+  hosts: webservers
+  vars:
+    http_port: 80	
+
+- name: Set up Apache
+  hosts: webservers
+  vars_files:
+    - external_vars.yml

@@ -1,0 +1,15 @@
+---
+all:
+  hosts:
+    loadbalancer1:
+  children:
+    webservers:
+      hosts:
+        web[01:04]_dublin:
+    dbservers:
+      hosts:
+        db[01:02]_dublin:
+    all_servers:
+      children:
+        webservers:
+        dbservers:

@@ -1,0 +1,8 @@
+---
+- name: Check the version of code on a switch
+  hosts: veos
+  gather_facts: no			# or False
+  tasks:
+    - name:		Gather version from switches
+      raw:      ‘show version’
+      register: show_version
